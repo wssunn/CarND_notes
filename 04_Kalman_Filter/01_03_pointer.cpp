@@ -30,6 +30,5 @@ int main()
 	std::cout << "**ppi = " << **ppi << std::endl;
   	std::cout << "i = " << i <<std::endl;
 
-	system("pause");
 	return 0;
 }
