@@ -14,7 +14,7 @@ class stud
         //destructor
         ~stud() {cout<<"stud has been destructed!\n"<<endl;}
 
-    void display()//³ÉÔ±º¯Êı£¬Êä³ö¶ÔÏóµÄÊı¾İ
+    void display()//æˆå‘˜å‡½æ•°ï¼Œè¾“å‡ºå¯¹è±¡çš„æ•°æ®
     {
         cout<<"num:"<<num<<endl;
         cout<<"name:"<<name<<endl;
@@ -24,15 +24,15 @@ class stud
 
 int main()
 {
-    // Ö¸Õë¶ÔÏó, ²»»á×Ô¶¯µ÷ÓÃÎö¹¹£¬ĞèÊÖ¶¯ÊÍ·Å£¬ÓÃdelete
+    //æŒ‡é’ˆå¯¹è±¡, ä¸ä¼šè‡ªåŠ¨è°ƒç”¨ææ„ï¼Œéœ€æ‰‹åŠ¨é‡Šæ”¾ï¼Œç”¨delete
     stud* student1 = new stud(1, "Wang", 'f');
     student1->display();
     delete student1;
 
-    // ÁÙÊ±¶ÔÏó£¨×÷ÓÃÓò£ºËùÔÚÓï¾ä£©; ×÷ÓÃÓòËùÔÚÓï¾ä£¬Ö´ĞĞÍê¸ÃÓï¾äÖ®ºó±»ÊÍ·Å
+    // ä¸´æ—¶å¯¹è±¡ï¼ˆä½œç”¨åŸŸï¼šæ‰€åœ¨è¯­å¥ï¼‰; ä½œç”¨åŸŸæ‰€åœ¨è¯­å¥ï¼Œæ‰§è¡Œå®Œè¯¥è¯­å¥ä¹‹åè¢«é‡Šæ”¾
     stud(2, "Hu", 'f').display();
 
-    // ¾Ö²¿¶ÔÏó£¨Õ»Çø£¬»á×Ô¶¯µ÷ÓÃÎö¹¹º¯Êı£©
+    // å±€éƒ¨å¯¹è±¡ï¼ˆæ ˆåŒºï¼Œä¼šè‡ªåŠ¨è°ƒç”¨ææ„å‡½æ•°ï¼‰
     stud stud1(3, "Wang-li", 'f'), stud2(4, "Zhang-fun", 'm');
     stud1.display(); stud2.display();
     return 0;

@@ -9,26 +9,26 @@ int main()
 	int i = 30;
 
 	int *pi = &i;
-  int **ppi = &pi;
-	std::cout << "*pi = " << *pi << std::endl;       //Ò»¼¶Ö¸Õë
-  std::cout << "pi = " << pi << std::endl;
-	std::cout << "**ppi = " << **ppi << std::endl;   //¶ş¼¶Ö¸Õë
-  std::cout << "i = " << i <<std::endl;
+  	int **ppi = &pi;
+	std::cout << "*pi = " << *pi << std::endl;       //ä¸€çº§æŒ‡é’ˆ
+  	std::cout << "pi = " << pi << std::endl;
+	std::cout << "**ppi = " << **ppi << std::endl; //äºŒçº§æŒ‡é’ˆ
+	std::cout << "i = " << i <<std::endl;
 
 	*pi = 20;
-  std::cout << "\nchange *pi" << std::endl;
-	std::cout << "*pi = " << *pi << std::endl;  //¸Ä±äÒ»¼¶Ö¸ÕëÖµ
-  std::cout << "pi = " << pi << std::endl;
-  std::cout << "**ppi = " << **ppi <<std::endl;
-  std::cout << "i = " << i <<std::endl;
+ 	std::cout << "\nchange *pi" << std::endl;
+	std::cout << "*pi = " << *pi << std::endl;  //æ”¹å˜ä¸€çº§æŒ‡é’ˆå€¼
+	std::cout << "pi = " << pi << std::endl;
+  	std::cout << "**ppi = " << **ppi <<std::endl;
+  	std::cout << "i = " << i <<std::endl;
 
 	int b = 10;
 	*ppi = &b;
-  std::cout << "\nchange **ppi" << std::endl;
-	std::cout << "*pi = " << *pi << std::endl;   //¸Ä±äÒ»¼¶Ö¸ÕëµÄÖ¸Ïò
-  std::cout << "pi = " << pi << std::endl;
+  	std::cout << "\nchange **ppi" << std::endl;
+	std::cout << "*pi = " << *pi << std::endl;  //æ”¹å˜ä¸€çº§æŒ‡é’ˆçš„æŒ‡å‘
+	std::cout << "pi = " << pi << std::endl;
 	std::cout << "**ppi = " << **ppi << std::endl;
-  std::cout << "i = " << i <<std::endl;
+  	std::cout << "i = " << i <<std::endl;
 
 	system("pause");
 	return 0;
