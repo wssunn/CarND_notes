@@ -45,7 +45,14 @@ int main()
     return 0;
 }
 
-// TODO: Complete pseudo range estimator function
+/*********************************************
+For each landmark position:
+determine the distance between each pseudo position x and each landmark position
+if the distance is positive (landmark is forward of the pseudo position) 
+    push the distance to the pseudo range vector
+sort the pseudo range vector in ascending order
+return the pseudo range vector
+*************************************************/
 vector<float> pseudo_range_estimator(vector<float> landmark_positions,
                                      float pseudo_position)
 {
@@ -53,7 +60,6 @@ vector<float> pseudo_range_estimator(vector<float> landmark_positions,
     vector<float> pseudo_ranges;
 
     // loop over number of landmarks and estimate pseudo ranges
-    // YOUR CODE HERE
     for (int l = 0; l < landmark_positions.size(); ++l)
     {
         // estimate pseudo range for each single landmark
@@ -68,7 +74,6 @@ vector<float> pseudo_range_estimator(vector<float> landmark_positions,
     }
 
     // sort pseudo range vector
-    // YOUR CODE HERE
     sort(pseudo_ranges.begin(), pseudo_ranges.end());
 
     return pseudo_ranges;
