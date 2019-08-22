@@ -33,19 +33,18 @@ int main(){
         a->x = 300;
         cout << a->x << " " << a->y << endl;
     }
-    for (auto &p : particles)
-    {
+    for (auto &p : particles){   
         cout << p.x << " " << p.y << endl;
         p.x = 100;
     }
     for (auto &p : particles)
-    {
-        cout << p.x << " " << p.y << endl;
-    }
+    {cout << p.x << " " << p.y << endl;}
 
     double a = 10*
                 5;
     cout << a << endl;
+
+    int b = int(10.4); cout << b << endl;
 
     return 0;
 }
