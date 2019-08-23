@@ -9,6 +9,13 @@ heuristic = [[9, 8, 7, 6, 5, 4],
              [6, 5, 4, 3, 2, 1],
              [5, 4, 3, 2, 1, 0]]
 
+# to turn off a* and use grid search
+# heuristic = [[0, 0, 0, 0, 0, 0],
+#              [0, 0, 0, 0, 0, 0],
+#              [0, 0, 0, 0, 0, 0],
+#              [0, 0, 0, 0, 0, 0],
+#              [0, 0, 0, 0, 0, 0]]
+
 init = [0, 0]
 goal = [len(grid)-1, len(grid[0])-1]
 cost = 1
@@ -17,25 +24,39 @@ delta = [[-1, 0],  # go up
          [0, -1],  # go left
          [1, 0],  # go down
          [0, 1]]  # go right
-
 delta_name = ['^', '<', 'v', '>']
 
-class Point():
-    def __init__(self, g_value=0, x=0, y=0, prev_movement=0):
-        self.g_value = g_value
-        self.x = x
-        self.y = y
-        self.prev_movement = prev_movement
+"""
+closed = list of all nodes; 0 unvisited, 1 visited
+    initialise start node as visited (set to 1)
+open = list of nodes that can be expanded
+expand
 
+
+while not found and possible to find:
+    if len(open) == 0:
+        not possible to find; algorithm fail
+    else:
+        pick node with smallest g_value
+        if node == goal:
+            found
+        else:
+            for all possible movements:
+                if moved_node in grid:
+                    if moved_node is not visited:
+                        new_g = old_node.g + cost
+                        heuristic = moved_node.heuristic
+                        new_f = new_g + heuristic
+                        open.append([moved_node, new_f])
+                        closed[moved_node] = 1; visited
+
+"""
 def search(grid, init, goal, cost, heuristic):
-    # ----------------------------------------
-    # modify the code below
-    # ----------------------------------------
+
     closed = [[0 for col in range(len(grid[0]))] for row in range(len(grid))]
     closed[init[0]][init[1]] = 1
 
     expand = [[-1 for col in range(len(grid[0]))] for row in range(len(grid))]
-    #action = [[-1 for col in range(len(grid[0]))] for row in range(len(grid))]
 
     x = init[0]
     y = init[1]
@@ -78,6 +99,8 @@ def search(grid, init, goal, cost, heuristic):
                             closed[x2][y2] = 1
 
     return expand
+
+
 expand = search(grid, init, goal, cost, heuristic)
 for line in expand:
     print(line)

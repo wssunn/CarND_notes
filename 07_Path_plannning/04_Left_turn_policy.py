@@ -28,7 +28,7 @@ action_name = ['R', '#', 'L']
 #     0 = navigable space
 #     1 = unnavigable space
 grid = [[1, 1, 1, 0, 0, 0],
-        [1, 1, 1, 0, 0, 0],
+        [1, 1, 1, 0, 1, 0],
         [0, 0, 0, 0, 0, 0],
         [1, 1, 1, 0, 1, 1],
         [1, 1, 1, 0, 1, 1]]
@@ -65,10 +65,10 @@ for all cell <- cell_prev in grid:
                 if cell_new on grid and not an obstacle:
                     value_new = cell_new.cost + cost of this movement
                         ##cell_new is closer to the goal hence has a lower cost
-                        
+
                     if value_new < cell_prev.original_cost:
-                        update value[prev_cell] = value_new
-                        record policy[prev_cell] = movement
+                        update value[orientation][prev_cell] = value_new
+                        record policy[orientation][prev_cell] = movement
 
 """
 def optimum_policy2D(grid, init, goal, cost):

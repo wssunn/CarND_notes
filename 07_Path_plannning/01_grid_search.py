@@ -129,7 +129,9 @@ def search(grid, init, goal, cost):
 
 
 find_path, efficiency = search(grid, init, goal, cost)
+print('path')
 for line in find_path:
     print(line)
+print('\ncost')
 for line in efficiency:
     print(line)
