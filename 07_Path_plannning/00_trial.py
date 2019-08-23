@@ -1,7 +1,5 @@
 a = [[0, 'a'], [0, 'b'], [3, 0], [2, '5']]
-
 a.sort()
-
 print(a)
 
 
@@ -13,3 +11,8 @@ class Point():
         self.prev_movement = prev_movement
 g = [Point, Point]
 print(g)
+
+
+action_name = ['R', '#', 'L']
+
+print(action_name.index("R"))
