@@ -14,7 +14,6 @@ NUM_THETA_CELLS:    The number of cells a circle is divided into.
 
 """
 
-
 """
 The expand function takes a state and goal as inputs and 
         returns a list of possible next states for a range of steering angles
