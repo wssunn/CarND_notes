@@ -82,7 +82,7 @@ class Robot(object):
 
 robot = Robot()
 robot.set(0, 1, 0)
-robot.set_steering_drift(10.0/180.0 * np.pi)
+robot.set_steering_drift(2.0/180.0 * np.pi)
 
 def run(robot, tau_p, tau_d, tau_i, n=100, speed=1.0):
     x_trajectory = []
@@ -102,6 +102,8 @@ def run(robot, tau_p, tau_d, tau_i, n=100, speed=1.0):
         y_trajectory.append(robot.y)
     return x_trajectory, y_trajectory
 
+
+# x_trajectory, y_trajectory = run(robot, 0.2, 3.0, 0.004)
 x_trajectory, y_trajectory = run(robot, 0.2, 3.0, 0.004)
 n = len(x_trajectory)
 
@@ -142,7 +144,7 @@ def run(robot, params, n=100, speed=1.0):
 
 
 # Make this tolerance bigger if you are timing out!
-def twiddle(tol=0.01): 
+def twiddle(tol=0.1): 
     p = [0, 0, 0]
     dp = [0.01, 0.1, 0.001]
     robot = make_robot()
